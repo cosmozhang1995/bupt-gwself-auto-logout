@@ -3,8 +3,16 @@ import time
 import config
 
 while True:
+	cookies = None
+	loginSuccess = False
 	print("\nLog in...")
-	cookies = cli.login(config)
+	while not loginSuccess:
+		try:
+			cookies = cli.login(config)
+			loginSuccess = True
+		except:
+			print("Login failed. Retry in " + str(config.retryDelay) + " seconds...")
+			time.sleep(config.retryDelay)
 	print("Log in ok!")
 	while True:
 		print("\nStart a scan >")

@@ -10,3 +10,4 @@ rejectedList = [
 ]
 
 interval = 10
+retryDelay = 10
