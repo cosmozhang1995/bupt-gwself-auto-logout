@@ -4,7 +4,7 @@ import datetime
 import time
 import config
 
-f = open("./log", "a")
+f = open(os.path.split(os.path.realpath(__file__))[0] + "/log", "a")
 
 def writeLog(msg):
     content = ""
